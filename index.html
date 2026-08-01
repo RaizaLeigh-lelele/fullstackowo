@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Barangay San Isidro</title>
+
+    <!-- Bulma CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="hero is-primary">
+        <div class="hero-body">
+            <p class="title">Barangay San Isidro</p>
+            <p class="subtitle">Welcome to our community</p>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="navbar" aria-label="main navigation">
+        <div class="container">
+            <div class="navbar-menu is-active">
+                <div class="navbar-start">
+                    <a class="navbar-item" href="#about">About</a>
+                    <a class="navbar-item" href="#officials">Officials</a>
+                    <a class="navbar-item" href="#contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+
+        <!-- About Section -->
+        <section id="about" class="section">
+            <div class="container">
+                <h1 class="title">About Our Barangay</h1>
+
+                <p>
+                    Barangay San Isidro is a welcoming and peaceful community
+                    dedicated to serving its residents. Our barangay works
+                    together to promote safety, cleanliness, and the
+                    well-being of everyone in the community.
+                </p>
+            </div>
+        </section>
+
+        <!-- Officials Section -->
+        <section id="officials" class="section has-background-light">
+            <div class="container">
+
+                <div class="columns is-multiline">
+
+                    <!-- Official 1 -->
+                    <article class="column is-12-mobile is-4-desktop">
+                        <div class="card">
+                            <div class="card-image">
+                                <figure class="image is-4by3">
+                                    <img
+                                        src="https://via.placeholder.com/400x300"
+                                        alt="Portrait of Barangay Captain Juan Dela Cruz"
+                                    >
+                                </figure>
+                            </div>
+
+                            <div class="card-content">
+                                <p class="title is-4">
+                                    Juan Dela Cruz
+                                </p>
+
+                                <p class="subtitle is-6">
+                                    Barangay Captain
+                                </p>
+
+                                <p>
+                                    Leads the barangay and oversees community
+                                    programs and public services.
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Official 2 -->
+                    <article class="column is-12-mobile is-4-desktop">
+                        <div class="card">
+                            <div class="card-image">
+                                <figure class="image is-4by3">
+                                    <img
+                                        src="https://via.placeholder.com/400x300"
+                                        alt="Portrait of Barangay Kagawad Maria Santos"
+                                    >
+                                </figure>
+                            </div>
+
+                            <div class="card-content">
+                                <p class="title is-4">
+                                    Maria Santos
+                                </p>
+
+                                <p class="subtitle is-6">
+                                    Barangay Kagawad
+                                </p>
+
+                                <p>
+                                    Helps create and implement programs that
+                                    benefit residents of the community.
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Official 3 -->
+                    <article class="column is-12-mobile is-4-desktop">
+                        <div class="card">
+                            <div class="card-image">
+                                <figure class="image is-4by3">
+                                    <img
+                                        src="https://via.placeholder.com/400x300"
+                                        alt="Portrait of Barangay Kagawad Pedro Reyes"
+                                    >
+                                </figure>
+                            </div>
+
+                            <div class="card-content">
+                                <p class="title is-4">
+                                    Pedro Reyes
+                                </p>
+
+                                <p class="subtitle is-6">
+                                    Barangay Kagawad
+                                </p>
+
+                                <p>
+                                    Supports local initiatives and works with
+                                    residents to improve the community.
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <div class="container">
+
+                <h2 class="title">Contact Us</h2>
+
+                <form action="#" method="post">
+
+                    <!-- Name -->
+                    <div class="field">
+                        <label class="label" for="name">
+                            Full Name
+                        </label>
+
+                        <div class="control">
+                            <input
+                                class="input"
+                                type="text"
+                                id="name"
+                                name="name"
+                                placeholder="Enter your full name"
+                                required
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="field">
+                        <label class="label" for="email">
+                            Email Address
+                        </label>
+
+                        <div class="control">
+                            <input
+                                class="input"
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="Enter your email"
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Message -->
+                    <div class="field">
+                        <label class="label" for="message">
+                            Message
+                        </label>
+
+                        <div class="control">
+                            <textarea
+                                class="textarea"
+                                id="message"
+                                name="message"
+                                placeholder="Write your message here"
+                                required
+                            ></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Submit -->
+                    <div class="field">
+                        <div class="control">
+                            <button
+                                class="button is-primary"
+                                type="submit"
+                            >
+                                Submit
+                            </button>
+                        </div>
+                    </div>
+
+                </form>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>
+                <strong>Barangay San Isidro</strong> |
+                Serving our community with care.
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
