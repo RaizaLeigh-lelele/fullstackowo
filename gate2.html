@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gate G2 — Barangay Complaint Box</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
+
+<body>
+
+  <section class="section">
+    <div class="container" style="max-width: 640px;">
+
+      <h1 class="title is-4">📣 Barangay Complaint Box</h1>
+
+      <p class="subtitle is-6">
+        <strong>GATE G2 · DOM & Events</strong>
+      </p>
+
+      <div class="message is-info is-light">
+        <div class="message-body">
+          Wire up the form in the script tag below. On submit, the entry must
+          appear at the <strong>top</strong> of the list, the form must clear,
+          and the page must <strong>not reload</strong>.
+        </div>
+      </div>
+
+      <!-- Complaint Form -->
+      <form id="complaint-form" class="box">
+
+        <div class="field">
+          <label class="label">Name</label>
+
+          <div class="control">
+            <input
+              id="name"
+              class="input"
+              type="text"
+              placeholder="Juan dela Cruz"
+            >
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Complaint / Request</label>
+
+          <div class="control">
+            <textarea
+              id="complaint"
+              class="textarea"
+              placeholder="Pothole on Sampaguita Street"
+            ></textarea>
+          </div>
+        </div>
+
+        <button
+          type="submit"
+          class="button is-primary"
+        >
+          Submit
+        </button>
+
+      </form>
+
+      <!-- Complaint Counter -->
+      <p class="mt-4">
+        Total complaints logged:
+        <strong id="count">0</strong>
+      </p>
+
+      <!-- Complaint List -->
+      <ul id="list" class="content"></ul>
+
+    </div>
+  </section>
+
+
+  <script>
+
+    // Select the form, list, and count by their IDs
+    const form = document.getElementById('complaint-form');
+    const list = document.getElementById('list');
+    const countSpan = document.getElementById('count');
+
+    let count = 0;
+
+
+    // Listen for the form being submitted
+    form.addEventListener('submit', function (e) {
+
+      // Stop the page from reloading
+      e.preventDefault();
+
+      // Get the values from the inputs
+      const name = document.getElementById('name').value;
+      const complaint = document.getElementById('complaint').value;
+
+      // Create a new list item
+      const li = document.createElement('li');
+
+      // Put the name and complaint inside the list item
+      li.textContent = name + ": " + complaint;
+
+      // Put the newest complaint at the top
+      list.prepend(li);
+
+      // Clear the form
+      form.reset();
+
+      // Increase the complaint counter
+      bumpCount();
+
+    });
+
+
+    // Updates the complaint counter
+    function bumpCount() {
+      count = count + 1;
+      countSpan.textContent = count;
+    }
+
+  </script>
+
+</body>
+</html>

@@ -25,6 +25,7 @@
                 <div class="navbar-start">
                     <a class="navbar-item" href="#about">About</a>
                     <a class="navbar-item" href="#officials">Officials</a>
+                    <a class="navbar-item" href="#cart">Cart</a>
                     <a class="navbar-item" href="#contact">Contact</a>
                 </div>
             </div>
@@ -49,6 +50,8 @@
         <section id="officials" class="section has-background-light">
             <div class="container">
 
+                <h2 class="title">Officials</h2>
+
                 <div class="columns is-multiline">
 
                     <!-- Official 1 -->
@@ -57,24 +60,16 @@
                             <div class="card-image">
                                 <figure class="image is-4by3">
                                     <img
-                                        src="https://th.bing.com/th/id/OIP.pjIAb7vKFrUmfYWIf8MmIQHaHa?r=0&o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Portrait of a person""
-                                        alt="Portrait of me"
+                                        src="https://th.bing.com/th/id/OIP.pjIAb7vKFrUmfYWIf8MmIQHaHa?r=0&o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3"
+                                        alt="Portrait of Gojo"
                                     >
                                 </figure>
                             </div>
 
                             <div class="card-content">
-                                <p class="title is-4">
-                                    Gojo
-                                </p>
-
-                                <p class="subtitle is-6">
-                                    h
-                                </p>
-
-                                <p>
-                                    does nothing
-                                </p>
+                                <p class="title is-4">Gojo</p>
+                                <p class="subtitle is-6">h</p>
+                                <p>does nothing</p>
                             </div>
                         </div>
                     </article>
@@ -86,23 +81,15 @@
                                 <figure class="image is-4by3">
                                     <img
                                         src="https://i.pinimg.com/originals/86/d5/34/86d534124e2c1eb20ab76efe7af224d0.jpg"
-                                        alt="Portrait of me"
+                                        alt="Portrait of another official"
                                     >
                                 </figure>
                             </div>
 
                             <div class="card-content">
-                                <p class="title is-4">
-                                    yea
-                                </p>
-
-                                <p class="subtitle is-6">
-                                    yes
-                                </p>
-
-                                <p>
-                                    Helps nothing.
-                                </p>
+                                <p class="title is-4">Yea</p>
+                                <p class="subtitle is-6">Yes</p>
+                                <p>Helps nothing.</p>
                             </div>
                         </div>
                     </article>
@@ -114,28 +101,33 @@
                                 <figure class="image is-4by3">
                                     <img
                                         src="https://i.pinimg.com/736x/62/b0/5c/62b05c5a2b4af68ab02670d0e06baa3f.jpg?nii=t"
-                                        alt="Portrait of me"
+                                        alt="Portrait of Shoko"
                                     >
                                 </figure>
                             </div>
 
                             <div class="card-content">
-                                <p class="title is-4">
-                                    Shoko
-                                </p>
-
-                                <p class="subtitle is-6">
-                                    yes bro
-                                </p>
-
-                                <p>
-                                    walang ginagawa
-                                </p>
+                                <p class="title is-4">Shoko</p>
+                                <p class="subtitle is-6">yes bro</p>
+                                <p>walang ginagawa</p>
                             </div>
                         </div>
                     </article>
 
                 </div>
+            </div>
+        </section>
+
+        <!-- Cart Section -->
+        <section id="cart" class="section">
+            <div class="container">
+
+                <h2 class="title">Sari-sari Cart</h2>
+
+                <div id="output" class="box">
+                    Loading receipt...
+                </div>
+
             </div>
         </section>
 
@@ -227,6 +219,61 @@
             </p>
         </div>
     </footer>
+
+    <!-- JavaScript -->
+    <script>
+
+        const items = [
+            { name: "Rice", price: 50, qty: 3 },
+            { name: "Canned Tuna", price: 45, qty: 4 },
+            { name: "Instant Noodles", price: 15, qty: 5 }
+        ];
+
+        function computeSubtotal(items) {
+            let total = 0;
+
+            for (let item of items) {
+                total = total + (item.price * item.qty);
+            }
+
+            return total;
+        }
+
+        function applyDiscount(total) {
+            if (total > 500) {
+                return total * 0.9;
+            } else {
+                return total;
+            }
+        }
+
+        function printReceipt(items) {
+            console.log("Receipt:");
+
+            for (let item of items) {
+                let subtotal = item.price * item.qty;
+
+                console.log(
+                    item.name + " - " + item.qty + " x " + item.price + " = " + subtotal
+                );
+            }
+
+            let subtotal = computeSubtotal(items);
+            let finalTotal = applyDiscount(subtotal);
+
+            console.log("Subtotal: " + subtotal);
+            console.log("Final Total: " + finalTotal);
+
+            return finalTotal;
+        }
+
+        const finalTotal = printReceipt(items);
+
+        document.getElementById("output").innerHTML =
+            "<h3 class='title is-4'>Receipt</h3>" +
+            "<p>Final Total: ₱" + finalTotal.toFixed(2) + "</p>";
+
+    </script>
 
 </body>
 </html>
